@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="射频卡数据破解与利用"><meta name="keywords" content="射频卡,破解,复制,数据篡改,复现,M1卡,UID"><meta name="author" content="来SC,undefined"><meta name="copyright" content="来SC"><title>射频卡数据破解与利用【来SC】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="来SC" type="application/atom+xml">
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于射频卡"><span class="toc-number">1.</span> <span class="toc-text">关于射频卡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是射频卡"><span class="toc-number">1.1.</span> <span class="toc-text">什么是射频卡?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#卡片分类及可利用卡片分类"><span class="toc-number">1.2.</span> <span class="toc-text">卡片分类及可利用卡片分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于M1卡片"><span class="toc-number">1.3.</span> <span class="toc-text">关于M1卡片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#M1卡片存储逻辑结构"><span class="toc-number">1.4.</span> <span class="toc-text">M1卡片存储逻辑结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据破解与利用"><span class="toc-number">2.</span> <span class="toc-text">数据破解与利用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备阶段"><span class="toc-number">2.1.</span> <span class="toc-text">准备阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原卡数据破解过程"><span class="toc-number">2.2.</span> <span class="toc-text">原卡数据破解过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据含义破解"><span class="toc-number">2.3.</span> <span class="toc-text">数据含义破解</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#某鲁软件园附近某大厦电梯卡破解"><span class="toc-number">3.</span> <span class="toc-text">某鲁软件园附近某大厦电梯卡破解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#声明："><span class="toc-number">4.</span> <span class="toc-text">声明：</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">来SC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/lsc183754539" target="_blank">GitHub<i class="icon-dot bg-color1"></i></a><a class="links-button button-hover" href="mailto:pasalai@qq.com" target="_blank">E-Mail<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="http://wpa.qq.com/msgrd?v=3&amp;uin=&amp;site=qq&amp;menu=yes" target="_blank">QQ<i class="icon-dot bg-color2"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">11</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">23</span></a></div><div class="friend-link"><a class="friend-link-text" href="https://github.com/laishouchao" target="_blank">GitHub1</a><a class="friend-link-text" href="https://github.com/lsc183754539" target="_blank">GitHub2</a><a class="friend-link-text" href="http://blog.wanqqq29.cn/" target="_blank">wanqqq29_blog</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">来SC</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">射频卡数据破解与利用</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-01-03 | 更新于 2020-03-19</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/%E5%B0%84%E9%A2%91%E5%8D%A1/">射频卡</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/%E7%A0%B4%E8%A7%A3/">破解</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/%E5%A4%8D%E5%88%B6/">复制</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/%E6%95%B0%E6%8D%AE%E7%AF%A1%E6%94%B9/">数据篡改</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/%E5%A4%8D%E7%8E%B0/">复现</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/M1%E5%8D%A1/">M1卡</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/UID/">UID</a></div></div></div><div class="main-content"><h1 id="关于射频卡"><a href="#关于射频卡" class="headerlink" title="关于射频卡"></a>关于射频卡</h1><h2 id="什么是射频卡"><a href="#什么是射频卡" class="headerlink" title="什么是射频卡?"></a>什么是射频卡?</h2><blockquote>
+<p>射频识别（RFID）是 Radio Frequency Identification 的缩写。<br>其原理为阅读器与标签之间进行非接触式的数据通信，达到识别目标的目的。RFID 的应用非常广泛，典型应用有动物晶片、汽车晶片防盗器、门禁管制、停车场管制、生产线自动化、物料管理。<br>——参考百度百科“<a href="https://baike.baidu.com/item/%E5%B0%84%E9%A2%91%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF/9524139" target="_blank" rel="noopener">射频识别技术</a>”词条。  </p>
+</blockquote>
+<a id="more"></a>
+<p>利用RFID技术生产的卡片一般称为射频卡。</p>
+<h2 id="卡片分类及可利用卡片分类"><a href="#卡片分类及可利用卡片分类" class="headerlink" title="卡片分类及可利用卡片分类"></a>卡片分类及可利用卡片分类</h2><ul>
+<li>UID卡：除0扇区不可写，其他扇区均可重复擦写，0扇区的数据为预设好，无法重写</li>
+<li>CUID卡：所有扇区均可重复擦写</li>
+<li>FUID卡：0扇区只能写入一次，写入后不可更改</li>
+</ul>
+<h2 id="关于M1卡片"><a href="#关于M1卡片" class="headerlink" title="关于M1卡片"></a>关于M1卡片</h2><ul>
+<li>M1卡片是目前几种比较常见的几种卡片之一，多用于电梯门禁卡，园区消费卡等场景，包括部分公交卡亦是如此。</li>
+<li>M1卡片本身存在一些漏洞，使得可以通过一些特殊手段进行密钥的破解，从而得到扇区和块的十六进制数据。</li>
+</ul>
+<h2 id="M1卡片存储逻辑结构"><a href="#M1卡片存储逻辑结构" class="headerlink" title="M1卡片存储逻辑结构"></a>M1卡片存储逻辑结构</h2><p>此处以13.56MHZ的MIFAREClassic的1K卡为例介绍：<br><img src="https://i.jpg.dog/img/5d1d67db7d9621feaae05e5c2ffd9a3d.jpg" alt="扇区示意图">  </p>
+<ul>
+<li>该卡片共16个扇区，分别为扇区0到扇区15</li>
+<li>每个扇区分为4个块（即图中的每一行）</li>
+<li>扇区0为卡片信息扇区，0扇区0块的前8位为卡片的UID（即卡片的编码，该编码全球唯一），0块的其他位为卡片的厂商信息，一般不需要改动（有时候改动会引起非加密卡被读作加密卡的错误）</li>
+<li>每个扇区的0块的前12位(16进制)及后12位为该扇区的密钥A及密钥B</li>
+<li>0扇区的密钥A/B必定为全F（非加密）</li>
+<li>1-15扇区的0、1、2块为数据存储的块，3块为密钥块，可能存在密钥A/B</li>
+<li>其他详见图示中的颜色指示</li>
+</ul>
+<h1 id="数据破解与利用"><a href="#数据破解与利用" class="headerlink" title="数据破解与利用"></a>数据破解与利用</h1><h2 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h2><ul>
+<li>读写卡硬件及软件(约RMB30)<ul>
+<li>PN532模块一个</li>
+<li>USB转TTL模块一套</li>
+<li>连接线</li>
+<li><img src="https://i.jpg.dog/img/2d836f072c48ac6de77535fcb9b702e8.png" alt="图片来自酷安@七岁超可爱"></li>
+<li><img src="https://i.jpg.dog/img/0a46a98a948821af25c84ad1b931a45f.png" alt="0a46a98a948821af25c84ad1b931a45f.png"></li>
+<li>或者再有钱可以上功能强大的变色龙等</li>
+</ul>
+</li>
+<li>软件（驱动程序、上位机、十六进制编辑器，手机NFC读写工具、MifareClassicTool.apk等）<a href="https://www.lanzous.com/i6lyvjg" target="_blank" rel="noopener">下载地址</a></li>
+</ul>
+<h2 id="原卡数据破解过程"><a href="#原卡数据破解过程" class="headerlink" title="原卡数据破解过程"></a>原卡数据破解过程</h2><ul>
+<li>连接pn532和电脑，并按提示（读驱动文件夹中的说明）正确安装驱动</li>
+<li>打开上位机，连接pn532</li>
+<li>将卡片放在pn532上，点击读取数据，等待读取破解完成</li>
+<li>读取完成后点数据列表的左上方的箭头，对数据进行保存（.dump格式）</li>
+</ul>
+<h2 id="数据含义破解"><a href="#数据含义破解" class="headerlink" title="数据含义破解"></a>数据含义破解</h2><ul>
+<li>读取到数据后可用winhex等软件对保存的16进制文件进行数据分析</li>
+<li>多次消费并读取数据，对比变更的数据，即金额信息</li>
+<li>破解编码规律（自行探索）</li>
+<li>根据得到的各种信息及需求伪造数据</li>
+<li>数据使用上位机的写IC卡功能写入空白卡（推荐使用CUID空白卡）</li>
+</ul>
+<h1 id="某鲁软件园附近某大厦电梯卡破解"><a href="#某鲁软件园附近某大厦电梯卡破解" class="headerlink" title="某鲁软件园附近某大厦电梯卡破解"></a>某鲁软件园附近某大厦电梯卡破解</h1><ul>
+<li>前期参考上面步骤</li>
+<li>每张电梯卡能到达的楼层不同，数据存在区别</li>
+<li>改电梯卡每次读取时会尝试写入0扇区为空（反复制卡片），所以采用FUID卡片进行卡片复制，解决重写验证。</li>
+</ul>
+<h1 id="声明："><a href="#声明：" class="headerlink" title="声明："></a>声明：</h1><ul>
+<li>本文章仅供技术交流，请勿用于违法犯罪行为</li>
+<li>对阅读本文导致的违法犯罪行为，请违法人员自行承担相关责任，所有后果及责任与本文作者无关</li>
+<li>请勿未授权转载</li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">来SC</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="https://www.sdyunet.com/2020/01/03/%E5%B0%84%E9%A2%91%E5%8D%A1%E6%95%B0%E6%8D%AE%E7%A0%B4%E8%A7%A3%E4%B8%8E%E5%88%A9%E7%94%A8/">https://www.sdyunet.com/2020/01/03/%E5%B0%84%E9%A2%91%E5%8D%A1%E6%95%B0%E6%8D%AE%E7%A0%B4%E8%A7%A3%E4%B8%8E%E5%88%A9%E7%94%A8/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.sdyunet.com">来SC</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/01/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E7%AC%94%E8%AE%B0/"><i class="fas fa-angle-left">&nbsp;</i><span>操作系统期末笔记</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/01/03/HCIA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/"><span>HCIA学习笔记(5/5)</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 ～ 2020 By 来SC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
