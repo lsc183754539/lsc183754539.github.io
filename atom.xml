@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sdyunet.com/"/>
-  <updated>2020-03-19T01:43:29.854Z</updated>
+  <updated>2020-03-19T01:50:37.535Z</updated>
   <id>https://www.sdyunet.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>国内访问Github无法显示图片</title>
+    <link href="https://www.sdyunet.com/2020/03/19/%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGithub%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/"/>
+    <id>https://www.sdyunet.com/2020/03/19/%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGithub%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87/</id>
+    <published>2020-03-18T22:53:05.000Z</published>
+    <updated>2020-03-19T01:50:37.535Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul><li>GitHub打开后图片全为损坏图标，无法加载  </li></ul><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul><li>打开路径C:\Windows\System32\drivers\etc下的hosts文件</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> GitHub Start  </span></span><br><span class="line">192.30.253.112 github.com  </span><br><span class="line">192.30.253.119 gist.github.com  </span><br><span class="line">151.101.184.133 assets-cdn.github.com  </span><br><span class="line">151.101.184.133 raw.githubusercontent.com  </span><br><span class="line">151.101.184.133 gist.githubusercontent.com  </span><br><span class="line">151.101.184.133 cloud.githubusercontent.com  </span><br><span class="line">151.101.184.133 camo.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars0.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars1.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars2.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars3.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars4.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars5.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars6.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars7.githubusercontent.com  </span><br><span class="line">151.101.184.133 avatars8.githubusercontent.com  </span><br><span class="line">修改hosts文件后，刷新githab页面</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;GitHub打开后图片全为损坏图标，无法加载  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法
+      
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://www.sdyunet.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Github" scheme="https://www.sdyunet.com/tags/Github/"/>
+    
+      <category term="中国防火墙" scheme="https://www.sdyunet.com/tags/%E4%B8%AD%E5%9B%BD%E9%98%B2%E7%81%AB%E5%A2%99/"/>
+    
+      <category term="hosts" scheme="https://www.sdyunet.com/tags/hosts/"/>
+    
+      <category term="图片" scheme="https://www.sdyunet.com/tags/%E5%9B%BE%E7%89%87/"/>
+    
+  </entry>
   
   <entry>
     <title>2019新型冠状病毒(2019-nCoV)相关情况及疫情</title>
@@ -295,6 +330,37 @@
   </entry>
   
   <entry>
+    <title>2019年济南第一场雪</title>
+    <link href="https://www.sdyunet.com/2019/12/27/2019%E5%B9%B4%E6%B5%8E%E5%8D%97%E7%AC%AC%E4%B8%80%E5%9C%BA%E9%9B%AA/"/>
+    <id>https://www.sdyunet.com/2019/12/27/2019%E5%B9%B4%E6%B5%8E%E5%8D%97%E7%AC%AC%E4%B8%80%E5%9C%BA%E9%9B%AA/</id>
+    <published>2019-12-27T10:36:31.000Z</published>
+    <updated>2020-03-19T01:50:27.694Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://i.jpg.dog/img/356643d1b28a72f32a46477b36781030.jpg" alt="拍摄于2019年12月25日、济南"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://i.jpg.dog/img/356643d1b28a72f32a46477b36781030.jpg&quot; alt=&quot;拍摄于2019年12月25日、济南&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="旅行" scheme="https://www.sdyunet.com/categories/%E6%97%85%E8%A1%8C/"/>
+    
+    
+      <category term="摄影" scheme="https://www.sdyunet.com/tags/%E6%91%84%E5%BD%B1/"/>
+    
+      <category term="旅行" scheme="https://www.sdyunet.com/tags/%E6%97%85%E8%A1%8C/"/>
+    
+      <category term="纪念" scheme="https://www.sdyunet.com/tags/%E7%BA%AA%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HCIA学习笔记（1/5）</title>
     <link href="https://www.sdyunet.com/2019/12/23/HCIA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"/>
     <id>https://www.sdyunet.com/2019/12/23/HCIA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</id>
@@ -347,6 +413,32 @@
   </entry>
   
   <entry>
+    <title>Git_Frequently_used_commands_Git常用命令</title>
+    <link href="https://www.sdyunet.com/2019/12/21/Git%20Frequently%20used%20commands_Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://www.sdyunet.com/2019/12/21/Git%20Frequently%20used%20commands_Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2019-12-21T11:31:36.000Z</published>
+    <updated>2020-03-19T01:52:30.254Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Git-Frequently-used-commands-Git常用命令"><a href="#Git-Frequently-used-commands-Git常用命令" class="headerlink" title="Git_Frequently_used_commands_Git常用命令"></a>Git_Frequently_used_commands_Git常用命令</h1><p><a href="https://jpg.dog/i/O7Xe2" target="_blank" rel="noopener"><img src="https://i.jpg.dog/img/2916b5f9a5bc1845c27a02f3704b74f3.jpg" alt="Git_Frequently_used_commands_Git常用命令"></a></p><h2 id="遇到的问题及解决方案"><a href="#遇到的问题及解决方案" class="headerlink" title="遇到的问题及解决方案"></a>遇到的问题及解决方案</h2><ul><li>在使用git 对源代码进行push到gitHub时可能会出错，出现错误的主要原因是github中的某文件不在本地代码目录中，可以通过如下命令进行代码合并[注：pull=fetch+merge]<code>git pull --rebase origin master</code><br>执行上面代码后可以看到本地代码库中多了README.md文件，此时再执行语句 <code>git push</code> 即可完成代码上传到github</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Git-Frequently-used-commands-Git常用命令&quot;&gt;&lt;a href=&quot;#Git-Frequently-used-commands-Git常用命令&quot; class=&quot;headerlink&quot; title=&quot;Git_Frequently_used_
+      
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://www.sdyunet.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="https://www.sdyunet.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://www.sdyunet.com/2019/12/21/hello-world/"/>
     <id>https://www.sdyunet.com/2019/12/21/hello-world/</id>
@@ -367,6 +459,36 @@
     
       <category term="Init" scheme="https://www.sdyunet.com/categories/Init/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>initpost</title>
+    <link href="https://www.sdyunet.com/2019/12/21/%E9%9A%8F%E7%AC%94/"/>
+    <id>https://www.sdyunet.com/2019/12/21/%E9%9A%8F%E7%AC%94/</id>
+    <published>2019-12-21T09:31:36.000Z</published>
+    <updated>2020-03-19T01:51:56.104Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="随笔写写"><a href="#随笔写写" class="headerlink" title="随笔写写"></a>随笔写写</h1><h2 id="2019年12月27日"><a href="#2019年12月27日" class="headerlink" title="2019年12月27日"></a>2019年12月27日</h2><ul><li>该是复习的时候了，心不静，有事要发生。    </li></ul><h2 id="2019年12月22日"><a href="#2019年12月22日" class="headerlink" title="2019年12月22日"></a>2019年12月22日</h2><ul><li>今天是冬至，中午去北苑吃饺子</li><li>想出去走走</li><li>想回家</li><li>今天是2019年研究生招生考试第二天</li><li>突然感叹以后走了自己那么多账号怎么办,微信和支付宝银行卡里的钱是不是要冲公了</li></ul><h2 id="2019年12月21日"><a href="#2019年12月21日" class="headerlink" title="2019年12月21日"></a>2019年12月21日</h2><ul><li>今天打算去泰安，没去，都忙</li><li>下午去恒大名都吃的把子肉，真香</li><li>又是颓废的一天</li></ul><h2 id="2020年3月19日"><a href="#2020年3月19日" class="headerlink" title="2020年3月19日"></a>2020年3月19日</h2><ul><li>没事干的一天</li><li>疫情影响不知道啥时候结束，想开学（生活费）</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;随笔写写&quot;&gt;&lt;a href=&quot;#随笔写写&quot; class=&quot;headerlink&quot; title=&quot;随笔写写&quot;&gt;&lt;/a&gt;随笔写写&lt;/h1&gt;&lt;h2 id=&quot;2019年12月27日&quot;&gt;&lt;a href=&quot;#2019年12月27日&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+    
+      <category term="乱乱写" scheme="https://www.sdyunet.com/categories/%E4%B9%B1%E4%B9%B1%E5%86%99/"/>
+    
+    
+      <category term="随笔" scheme="https://www.sdyunet.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="日记" scheme="https://www.sdyunet.com/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="灵感" scheme="https://www.sdyunet.com/tags/%E7%81%B5%E6%84%9F/"/>
     
   </entry>
   
