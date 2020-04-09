@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sdyunet.cn/"/>
-  <updated>2020-04-05T14:24:16.649Z</updated>
+  <updated>2020-04-09T05:18:36.303Z</updated>
   <id>https://www.sdyunet.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SDN笔记1——概述</title>
+    <link href="https://www.sdyunet.cn/2020/04/09/SDN-Summary/"/>
+    <id>https://www.sdyunet.cn/2020/04/09/SDN-Summary/</id>
+    <published>2020-04-09T05:16:45.000Z</published>
+    <updated>2020-04-09T05:18:36.303Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="为什么有软件定义网络"><a href="#为什么有软件定义网络" class="headerlink" title="为什么有软件定义网络"></a>为什么有软件定义网络</h2><h3 id="网络系统的生命周期"><a href="#网络系统的生命周期" class="headerlink" title="网络系统的生命周期"></a>网络系统的生命周期</h3><ul><li>需求调研：互联范围、规模；承载应用</li><li>规划设计：网络架构、拓扑；IP与路由；安全与Qos策略</li><li>部署实施：根据规划与设计方案进行落地</li><li>运行维护：网络状态的监控与管理<h3 id="网络的分布式控制与管理架构"><a href="#网络的分布式控制与管理架构" class="headerlink" title="网络的分布式控制与管理架构"></a>网络的分布式控制与管理架构</h3></li><li>牵一发而动全身，改变十分麻烦</li></ul><h2 id="什么是软件定义网络"><a href="#什么是软件定义网络" class="headerlink" title="什么是软件定义网络"></a>什么是软件定义网络</h2><ul><li>全称：Softball Defined Network<h3 id="新的网络架构、新的网络设计"><a href="#新的网络架构、新的网络设计" class="headerlink" title="新的网络架构、新的网络设计"></a>新的网络架构、新的网络设计</h3></li><li>能弹性响应上层网络变化的网络可编程</li><li>引入一个集中统一的控制与管理层</li><li>解耦合网络设备管理平面、控制平面、数据平面</li><li>仅保留数据平面<h3 id="SDN三层网络架构"><a href="#SDN三层网络架构" class="headerlink" title="SDN三层网络架构"></a>SDN三层网络架构</h3></li><li>应用层：包含网络所要承载的多元业务与应用</li><li>集中控制层：SDN集中控制器，承上启下全局管控作用、在控制器与应用层间提供了不同API接口（北向接口），通过接口实现与上层应用的交互；提供了控制数据平面接口（南向接口）下发流表，指导转发行为。</li><li>网络基础设施层：网络设备，非传统网络设备，只承担道包转发功能<h3 id="新一代网络架构"><a href="#新一代网络架构" class="headerlink" title="新一代网络架构"></a>新一代网络架构</h3></li><li>底层网络设备  解耦    简单化</li><li>网络的管理    集中控制器  全局化</li><li>网络的运维    SDN南向接口与协议   自动化</li><li>网络的应用    SDN北向接口与协议   人性化</li></ul><h2 id="软件定义网络技术的产生与发展"><a href="#软件定义网络技术的产生与发展" class="headerlink" title="软件定义网络技术的产生与发展"></a>软件定义网络技术的产生与发展</h2><h3 id="起源："><a href="#起源：" class="headerlink" title="起源："></a>起源：</h3><ul><li>2005年，美国国家自然科学基金会：网络创新实验环境（GENI）提出的Clean-Slate项目</li><li>SDN始祖：Nick </li><li>SDN之父：Martin</li><li>SDN大神：SCott</li><li>2006年提出模型</li><li>2007年成立Nicira，发表论文</li><li>2008年发布首个开源SDN控制器NOX-Classic，发表关于openflow的论文</li><li>2009年发布首个基于Python语言的SDN控制器POX，同时发布OpenFlow v1.0</li><li>2010年发布开源SDN模拟器Mininet</li><li>2011年成了开放网络基金会</li><li>2012年Google发布应用SDN技术解决数据中心间流量问题的方案B4；思科发布SDN战略ONE；Big Switch发布开源控制器Floodlight；日本NTT公司发布开源控制器Ryu</li><li>2012从初创期发展到成熟期</li><li>2013-2018 SDN发展进入快速扩张时期</li></ul><h3 id="SDN发展趋势"><a href="#SDN发展趋势" class="headerlink" title="SDN发展趋势"></a>SDN发展趋势</h3><ul><li>应用范围扩大</li><li>市场规模快速增长</li><li>技术融合扩大、加速</li><li>人才需求扩大</li></ul><h2 id="SDN标准化"><a href="#SDN标准化" class="headerlink" title="SDN标准化"></a>SDN标准化</h2><h3 id="组织机构"><a href="#组织机构" class="headerlink" title="组织机构"></a>组织机构</h3><ul><li>开放网络基金会（ONF）：SDN白皮书、OpenFlow协议、OF-Config</li><li>因特网工程任务组IETF</li><li>国际电信联盟ITU</li><li>欧洲电信标准化协会ETSI：SDN与NFI融合问题<h3 id="标准化的重要作用"><a href="#标准化的重要作用" class="headerlink" title="标准化的重要作用"></a>标准化的重要作用</h3></li><li>推进快速发展及大规模应用</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;为什么有软件定义网络&quot;&gt;&lt;a href=&quot;#为什么有软件定义网络&quot; class=&quot;headerlink&quot; title=&quot;为什么有软件定义网络&quot;&gt;&lt;/a&gt;为什么有软件定义网络&lt;/h2&gt;&lt;h3 id=&quot;网络系统的生命周期&quot;&gt;&lt;a href=&quot;#网络系统的生命周期&quot; c
+      
+    
+    </summary>
+    
+    
+      <category term="SDN" scheme="https://www.sdyunet.cn/categories/SDN/"/>
+    
+    
+      <category term="笔记" scheme="https://www.sdyunet.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="SDN" scheme="https://www.sdyunet.cn/tags/SDN/"/>
+    
+      <category term="概述" scheme="https://www.sdyunet.cn/tags/%E6%A6%82%E8%BF%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>从零开始3小时Django开发个人博客系统</title>
