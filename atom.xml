@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sdyunet.cn/"/>
-  <updated>2020-04-09T05:20:03.981Z</updated>
+  <updated>2020-04-10T04:11:24.241Z</updated>
   <id>https://www.sdyunet.cn/</id>
   
   <author>
@@ -17,13 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SDN笔记2——基本原理</title>
+    <link href="https://www.sdyunet.cn/2020/04/10/SDNBasicPrinciple/"/>
+    <id>https://www.sdyunet.cn/2020/04/10/SDNBasicPrinciple/</id>
+    <published>2020-04-10T04:07:26.000Z</published>
+    <updated>2020-04-10T04:11:24.241Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="软件定义网络的基本架构-ONF定义的三层架构"><a href="#软件定义网络的基本架构-ONF定义的三层架构" class="headerlink" title="软件定义网络的基本架构-ONF定义的三层架构"></a>软件定义网络的基本架构-ONF定义的三层架构</h2><h3 id="ONF定义的基于OpenFlow的三层架构"><a href="#ONF定义的基于OpenFlow的三层架构" class="headerlink" title="ONF定义的基于OpenFlow的三层架构"></a>ONF定义的基于OpenFlow的三层架构</h3><h4 id="技术特点"><a href="#技术特点" class="headerlink" title="技术特点"></a>技术特点</h4><h5 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h5><ul><li>转发与控制分离</li><li>转发面进行了标准化</li></ul><h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul><li>流量调度</li><li>开放生态链</li></ul><h3 id="IETF提出的技术架构"><a href="#IETF提出的技术架构" class="headerlink" title="IETF提出的技术架构"></a>IETF提出的技术架构</h3><h4 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h4><h5 id="技术架构-1"><a href="#技术架构-1" class="headerlink" title="技术架构"></a>技术架构</h5><ul><li>开放现有网络设备的能力</li><li>标准化开放的API</li></ul><h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5><ul><li>充分利用了现有的网络设备和路由协议</li><li>快速实现</li></ul><h3 id="NICRA（被VM收购）提出的Overlay技术架构"><a href="#NICRA（被VM收购）提出的Overlay技术架构" class="headerlink" title="NICRA（被VM收购）提出的Overlay技术架构"></a>NICRA（被VM收购）提出的Overlay技术架构</h3><h4 id="技术特点-1"><a href="#技术特点-1" class="headerlink" title="技术特点"></a>技术特点</h4><h5 id="技术架构-2"><a href="#技术架构-2" class="headerlink" title="技术架构"></a>技术架构</h5><ul><li>网络边缘软件化</li><li>Overlay技术</li></ul><h5 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h5><ul><li>与物理网络解耦</li><li>部署非常灵活</li></ul><h3 id="ETSI的NFV技术"><a href="#ETSI的NFV技术" class="headerlink" title="ETSI的NFV技术"></a>ETSI的NFV技术</h3><h4 id="运营商网络"><a href="#运营商网络" class="headerlink" title="运营商网络"></a>运营商网络</h4><h5 id="技术架构-3"><a href="#技术架构-3" class="headerlink" title="技术架构"></a>技术架构</h5><ul><li>NFV与SDN互补</li><li>本质有很大不同</li></ul><h5 id="不能算是SDN架构"><a href="#不能算是SDN架构" class="headerlink" title="不能算是SDN架构"></a>不能算是SDN架构</h5><h2 id="ONF定义的SDN基本架构"><a href="#ONF定义的SDN基本架构" class="headerlink" title="ONF定义的SDN基本架构"></a>ONF定义的SDN基本架构</h2><h3 id="基本架构自下而上分为：转发层、控制层、应用层"><a href="#基本架构自下而上分为：转发层、控制层、应用层" class="headerlink" title="基本架构自下而上分为：转发层、控制层、应用层"></a>基本架构自下而上分为：转发层、控制层、应用层</h3><ul><li>转发层：一种新型网络创新架构，实现了网络设备控制与转发的分离</li><li>控制层：网络虚拟化的一种实现方式，核心技术为OpenFlow</li><li>应用层：实现了网络流量的灵活控制，使网络作为管道变得更加智能。</li></ul><h3 id="四个平面"><a href="#四个平面" class="headerlink" title="四个平面"></a>四个平面</h3><p><img src="https://imgkr.cn-bj.ufileos.com/a3646d64-2ae1-400e-8768-d30b03fd31d6.png" alt="四个平面"></p><h4 id="管理平面"><a href="#管理平面" class="headerlink" title="管理平面"></a>管理平面</h4><ul><li>负责静态的工作：网元初始化配置、指定控制器、定义控制器及应用的控制范围。</li></ul><h4 id="应用平面"><a href="#应用平面" class="headerlink" title="应用平面"></a>应用平面</h4><ul><li>SDN应用逻辑与北向接口（NBI）驱动</li><li>通过北向接口与SDN控制器交互</li></ul><h5 id="应用逻辑方面"><a href="#应用逻辑方面" class="headerlink" title="应用逻辑方面"></a>应用逻辑方面</h5><ul><li>应用交付能力（负载均衡、访问控制、应用加速）</li></ul><h4 id="控制平面"><a href="#控制平面" class="headerlink" title="控制平面"></a>控制平面</h4><h5 id="三个部分"><a href="#三个部分" class="headerlink" title="三个部分"></a>三个部分</h5><ul><li>北向接口（NBI）代理</li><li>SDN控制逻辑（ControlLogic）</li><li>控制数据平面接口驱动（CDPI Driver）</li></ul><h5 id="两个任务"><a href="#两个任务" class="headerlink" title="两个任务"></a>两个任务</h5><ul><li>将SDN应用层请求转换到SDN Datapath</li><li>为SDN应用提供底层网络的抽象模型（状态或事件）</li></ul><h5 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h5><ul><li>控制器，网络操作系统（NOS）或网络控制器（开源SDN控制器有NOX、POX、FloodLight、RYU、OpenDayLight、ONOS等）</li></ul><h4 id="数据平面"><a href="#数据平面" class="headerlink" title="数据平面"></a>数据平面</h4><h5 id="若干网元（NetWork-Element）：包含一个或多个SDN数据路径（SDN-Datapath）"><a href="#若干网元（NetWork-Element）：包含一个或多个SDN数据路径（SDN-Datapath）" class="headerlink" title="若干网元（NetWork Element）：包含一个或多个SDN数据路径（SDN Datapath）"></a>若干网元（NetWork Element）：包含一个或多个SDN数据路径（SDN Datapath）</h5><h6 id="SDN-datapath："><a href="#SDN-datapath：" class="headerlink" title="SDN datapath："></a>SDN datapath：</h6><ul><li>逻辑上的网络设备，负责转发和处理数据</li><li>一个SDN Datapath包含控制数据平面接口表和处理功能</li></ul><h5 id="关键技术-1"><a href="#关键技术-1" class="headerlink" title="关键技术"></a>关键技术</h5><ul><li>对数据面进行抽象建模<br><img src="https://imgkr.cn-bj.ufileos.com/bb65dbe4-2607-4519-ad5d-675e64c7b718.png" alt=""></li></ul><h3 id="两大接口"><a href="#两大接口" class="headerlink" title="两大接口"></a>两大接口</h3><h4 id="南向接口"><a href="#南向接口" class="headerlink" title="南向接口"></a>南向接口</h4><ul><li>控制平面和数据平面之间的接口（CDPI）</li><li>功能：转发行为控制、设备性能查询、统计报告、时间通知等</li><li>ONF架构特点：标准化的南向接口协议（OpenFlow），不依赖于底层具体的厂商的交换设备。</li></ul><h5 id="南向接口的关键技术"><a href="#南向接口的关键技术" class="headerlink" title="南向接口的关键技术"></a>南向接口的关键技术</h5><ul><li>转发面开放协议（南向接口协议）：允许控制器控制交换机的配置以及相关转发行为。<img src="https://imgkr.cn-bj.ufileos.com/014b28ea-16e2-4328-9ce6-11e8fd330a59.png" alt=""></li></ul><h4 id="北向接口"><a href="#北向接口" class="headerlink" title="北向接口"></a>北向接口</h4><ul><li>应用平面与控制平面之间的接口（NBI），向应用层提供抽象的网络视图，使应用能直接控制网络的行为。</li><li>开放的、与厂商无关的接口</li></ul><h5 id="北向接口的关键技术"><a href="#北向接口的关键技术" class="headerlink" title="北向接口的关键技术"></a>北向接口的关键技术</h5><ul><li>SDN北向接口设计：控制器将网络能力封装后开放接口，提供上层业务调用。</li><li>REST API成为SDN北向接口的主流设计</li><li>交换机状态采集、静态流表推送、防火墙策略等多种类型的接口。<img src="https://imgkr.cn-bj.ufileos.com/7da0ee38-2a98-4e4f-be2b-7e9cf29bb1c9.png" alt=""></li></ul><h2 id="SDN网络核心思想"><a href="#SDN网络核心思想" class="headerlink" title="SDN网络核心思想"></a>SDN网络核心思想</h2><ul><li>解耦</li><li>抽象</li><li>可编程</li></ul><h3 id="解耦"><a href="#解耦" class="headerlink" title="解耦"></a>解耦</h3><ul><li>将控制平面和数据平面分离：解决两层在物理上紧耦合导致的问题</li><li>解耦后，控制平面负责上层的控制决策，数据平面负责数据的交换转发，双方需遵行开放接口进行通信</li><li>传统网络<img src="https://imgkr.cn-bj.ufileos.com/fbcbcd82-b612-468a-8b71-a4206202d97d.png" alt="传统网络"></li><li>SDN网络<img src="https://imgkr.cn-bj.ufileos.com/4ca592e8-9807-449f-8662-71aafeb0ddd7.png" alt="SDN网络"></li><li>解耦合带来的问题  <ul><li>控制平面的服务能力成为网络性能的瓶颈</li><li>多控制器如何交互路由信息，保持分布式节点状态的一致性</li><li>控制平面的响应延迟。导致的数据平面可用性问题</li></ul></li></ul><h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><p><img src="https://imgkr.cn-bj.ufileos.com/cacd7127-5dab-4478-a19a-6dcd223dc244.png" alt=""></p><ul><li>转发抽象<img src="https://imgkr.cn-bj.ufileos.com/e382c7c0-835e-434d-b17d-b81be4caf654.png" alt="转发抽象"></li><li>分布状态抽象<img src="https://imgkr.cn-bj.ufileos.com/211647c9-a1c3-42bb-b3ed-adadc5c7ccf5.png" alt="分布状态抽象"></li><li>配置抽象：网络行为的表达通过编程语言实现，基于简化抽象模型，将抽象配置映射为物理配置（命令行、网关协议接口、控制器提供的API）</li><li>Overlay架构上的抽象<img src="https://imgkr.cn-bj.ufileos.com/fdaeedcd-6e65-4fae-b04a-13e07ef29c01.png" alt="Overlay架构上的抽象"></li></ul><h3 id="可编程"><a href="#可编程" class="headerlink" title="可编程"></a>可编程</h3><ul><li>SDN在数据平面与控制平面解耦后提供了开放的可编程接口</li><li>传统网络管理接口：命令行、网管协议、脚本语言等初级管理方式</li><li>网络管理员需要基于整个网络的更高级的编程方式</li><li>网络可编程：主动网络（开放网络节点的编程接口、用户数据上根据用户需求执行相应计算）、4D架构（数据平面、发现平面、扩展平面、决策平面）</li><li>SDN的可编程接口<img src="https://imgkr.cn-bj.ufileos.com/53c8995d-3813-4a18-b3a5-68d89643455a.png" alt="SDN的可编程接口"></li><li>SDN的数据平面也支持可编程（Intel高性能网络数据处理框架DPDK、斯坦福大学 数据平面可编程语言P4）</li></ul><h2 id="实验一：Mininet的应用实践"><a href="#实验一：Mininet的应用实践" class="headerlink" title="实验一：Mininet的应用实践"></a>实验一：Mininet的应用实践</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;软件定义网络的基本架构-ONF定义的三层架构&quot;&gt;&lt;a href=&quot;#软件定义网络的基本架构-ONF定义的三层架构&quot; class=&quot;headerlink&quot; title=&quot;软件定义网络的基本架构-ONF定义的三层架构&quot;&gt;&lt;/a&gt;软件定义网络的基本架构-ONF定义的三层
+      
+    
+    </summary>
+    
+    
+      <category term="SDN" scheme="https://www.sdyunet.cn/categories/SDN/"/>
+    
+    
+      <category term="笔记" scheme="https://www.sdyunet.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="SDN" scheme="https://www.sdyunet.cn/tags/SDN/"/>
+    
+      <category term="概述" scheme="https://www.sdyunet.cn/tags/%E6%A6%82%E8%BF%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SDN笔记1——概述</title>
     <link href="https://www.sdyunet.cn/2020/04/09/SDN-Summary/"/>
     <id>https://www.sdyunet.cn/2020/04/09/SDN-Summary/</id>
     <published>2020-04-09T05:16:45.000Z</published>
-    <updated>2020-04-09T05:20:03.981Z</updated>
+    <updated>2020-04-10T04:09:12.435Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="为什么有软件定义网络"><a href="#为什么有软件定义网络" class="headerlink" title="为什么有软件定义网络"></a>为什么有软件定义网络</h2><h3 id="网络系统的生命周期"><a href="#网络系统的生命周期" class="headerlink" title="网络系统的生命周期"></a>网络系统的生命周期</h3><ul><li>需求调研：互联范围、规模；承载应用</li><li>规划设计：网络架构、拓扑；IP与路由；安全与Qos策略</li><li>部署实施：根据规划与设计方案进行落地</li><li>运行维护：网络状态的监控与管理<h3 id="网络的分布式控制与管理架构"><a href="#网络的分布式控制与管理架构" class="headerlink" title="网络的分布式控制与管理架构"></a>网络的分布式控制与管理架构</h3></li><li>牵一发而动全身，改变十分麻烦</li></ul><h2 id="什么是软件定义网络"><a href="#什么是软件定义网络" class="headerlink" title="什么是软件定义网络"></a>什么是软件定义网络</h2><ul><li>全称：Softball Defined Network</li></ul><a id="more"></a><h3 id="新的网络架构、新的网络设计"><a href="#新的网络架构、新的网络设计" class="headerlink" title="新的网络架构、新的网络设计"></a>新的网络架构、新的网络设计</h3><ul><li>能弹性响应上层网络变化的网络可编程</li><li>引入一个集中统一的控制与管理层</li><li>解耦合网络设备管理平面、控制平面、数据平面</li><li>仅保留数据平面<h3 id="SDN三层网络架构"><a href="#SDN三层网络架构" class="headerlink" title="SDN三层网络架构"></a>SDN三层网络架构</h3></li><li>应用层：包含网络所要承载的多元业务与应用</li><li>集中控制层：SDN集中控制器，承上启下全局管控作用、在控制器与应用层间提供了不同API接口（北向接口），通过接口实现与上层应用的交互；提供了控制数据平面接口（南向接口）下发流表，指导转发行为。</li><li>网络基础设施层：网络设备，非传统网络设备，只承担道包转发功能<h3 id="新一代网络架构"><a href="#新一代网络架构" class="headerlink" title="新一代网络架构"></a>新一代网络架构</h3></li><li>底层网络设备  解耦    简单化</li><li>网络的管理    集中控制器  全局化</li><li>网络的运维    SDN南向接口与协议   自动化</li><li>网络的应用    SDN北向接口与协议   人性化</li></ul><h2 id="软件定义网络技术的产生与发展"><a href="#软件定义网络技术的产生与发展" class="headerlink" title="软件定义网络技术的产生与发展"></a>软件定义网络技术的产生与发展</h2><h3 id="起源："><a href="#起源：" class="headerlink" title="起源："></a>起源：</h3><ul><li>2005年，美国国家自然科学基金会：网络创新实验环境（GENI）提出的Clean-Slate项目</li><li>SDN始祖：Nick </li><li>SDN之父：Martin</li><li>SDN大神：SCott</li><li>2006年提出模型</li><li>2007年成立Nicira，发表论文</li><li>2008年发布首个开源SDN控制器NOX-Classic，发表关于openflow的论文</li><li>2009年发布首个基于Python语言的SDN控制器POX，同时发布OpenFlow v1.0</li><li>2010年发布开源SDN模拟器Mininet</li><li>2011年成了开放网络基金会</li><li>2012年Google发布应用SDN技术解决数据中心间流量问题的方案B4；思科发布SDN战略ONE；Big Switch发布开源控制器Floodlight；日本NTT公司发布开源控制器Ryu</li><li>2012从初创期发展到成熟期</li><li>2013-2018 SDN发展进入快速扩张时期</li></ul><h3 id="SDN发展趋势"><a href="#SDN发展趋势" class="headerlink" title="SDN发展趋势"></a>SDN发展趋势</h3><ul><li>应用范围扩大</li><li>市场规模快速增长</li><li>技术融合扩大、加速</li><li>人才需求扩大</li></ul><h2 id="SDN标准化"><a href="#SDN标准化" class="headerlink" title="SDN标准化"></a>SDN标准化</h2><h3 id="组织机构"><a href="#组织机构" class="headerlink" title="组织机构"></a>组织机构</h3><ul><li>开放网络基金会（ONF）：SDN白皮书、OpenFlow协议、OF-Config</li><li>因特网工程任务组IETF</li><li>国际电信联盟ITU</li><li>欧洲电信标准化协会ETSI：SDN与NFI融合问题<h3 id="标准化的重要作用"><a href="#标准化的重要作用" class="headerlink" title="标准化的重要作用"></a>标准化的重要作用</h3></li><li>推进快速发展及大规模应用</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="为什么有软件定义网络"><a href="#为什么有软件定义网络" class="headerlink" title="为什么有软件定义网络"></a>为什么有软件定义网络</h2><h3 id="网络系统的生命周期"><a href="#网络系统的生命周期" class="headerlink" title="网络系统的生命周期"></a>网络系统的生命周期</h3><ul><li>需求调研：互联范围、规模；承载应用</li><li>规划设计：网络架构、拓扑；IP与路由；安全与Qos策略</li><li>部署实施：根据规划与设计方案进行落地</li><li>运行维护：网络状态的监控与管理</li></ul><h3 id="网络的分布式控制与管理架构"><a href="#网络的分布式控制与管理架构" class="headerlink" title="网络的分布式控制与管理架构"></a>网络的分布式控制与管理架构</h3><ul><li>牵一发而动全身，改变十分麻烦</li></ul><h2 id="什么是软件定义网络"><a href="#什么是软件定义网络" class="headerlink" title="什么是软件定义网络"></a>什么是软件定义网络</h2><ul><li>全称：Softball Defined Network</li></ul><a id="more"></a><h3 id="新的网络架构、新的网络设计"><a href="#新的网络架构、新的网络设计" class="headerlink" title="新的网络架构、新的网络设计"></a>新的网络架构、新的网络设计</h3><ul><li>能弹性响应上层网络变化的网络可编程</li><li>引入一个集中统一的控制与管理层</li><li>解耦合网络设备管理平面、控制平面、数据平面</li><li>仅保留数据平面</li></ul><h3 id="SDN三层网络架构"><a href="#SDN三层网络架构" class="headerlink" title="SDN三层网络架构"></a>SDN三层网络架构</h3><ul><li>应用层：包含网络所要承载的多元业务与应用</li><li>集中控制层：SDN集中控制器，承上启下全局管控作用、在控制器与应用层间提供了不同API接口（北向接口），通过接口实现与上层应用的交互；提供了控制数据平面接口（南向接口）下发流表，指导转发行为。</li><li>网络基础设施层：网络设备，非传统网络设备，只承担道包转发功能</li></ul><h3 id="新一代网络架构"><a href="#新一代网络架构" class="headerlink" title="新一代网络架构"></a>新一代网络架构</h3><ul><li>底层网络设备  解耦    简单化</li><li>网络的管理    集中控制器  全局化</li><li>网络的运维    SDN南向接口与协议   自动化</li><li>网络的应用    SDN北向接口与协议   人性化</li></ul><h2 id="软件定义网络技术的产生与发展"><a href="#软件定义网络技术的产生与发展" class="headerlink" title="软件定义网络技术的产生与发展"></a>软件定义网络技术的产生与发展</h2><h3 id="起源："><a href="#起源：" class="headerlink" title="起源："></a>起源：</h3><ul><li>2005年，美国国家自然科学基金会：网络创新实验环境（GENI）提出的Clean-Slate项目</li><li>SDN始祖：Nick </li><li>SDN之父：Martin</li><li>SDN大神：SCott</li><li>2006年提出模型</li><li>2007年成立Nicira，发表论文</li><li>2008年发布首个开源SDN控制器NOX-Classic，发表关于openflow的论文</li><li>2009年发布首个基于Python语言的SDN控制器POX，同时发布OpenFlow v1.0</li><li>2010年发布开源SDN模拟器Mininet</li><li>2011年成了开放网络基金会</li><li>2012年Google发布应用SDN技术解决数据中心间流量问题的方案B4；思科发布SDN战略ONE；Big Switch发布开源控制器Floodlight；日本NTT公司发布开源控制器Ryu</li><li>2012从初创期发展到成熟期</li><li>2013-2018 SDN发展进入快速扩张时期</li></ul><h3 id="SDN发展趋势"><a href="#SDN发展趋势" class="headerlink" title="SDN发展趋势"></a>SDN发展趋势</h3><ul><li>应用范围扩大</li><li>市场规模快速增长</li><li>技术融合扩大、加速</li><li>人才需求扩大</li></ul><h2 id="SDN标准化"><a href="#SDN标准化" class="headerlink" title="SDN标准化"></a>SDN标准化</h2><h3 id="组织机构"><a href="#组织机构" class="headerlink" title="组织机构"></a>组织机构</h3><ul><li>开放网络基金会（ONF）：SDN白皮书、OpenFlow协议、OF-Config</li><li>因特网工程任务组IETF</li><li>国际电信联盟ITU</li><li>欧洲电信标准化协会ETSI：SDN与NFI融合问题</li></ul><h3 id="标准化的重要作用"><a href="#标准化的重要作用" class="headerlink" title="标准化的重要作用"></a>标准化的重要作用</h3><ul><li>推进快速发展及大规模应用</li></ul>]]></content>
     
     <summary type="html">
     
@@ -31,7 +61,9 @@
 &lt;li&gt;需求调研：互联范围、规模；承载应用&lt;/li&gt;
 &lt;li&gt;规划设计：网络架构、拓扑；IP与路由；安全与Qos策略&lt;/li&gt;
 &lt;li&gt;部署实施：根据规划与设计方案进行落地&lt;/li&gt;
-&lt;li&gt;运行维护：网络状态的监控与管理&lt;h3 id=&quot;网络的分布式控制与管理架构&quot;&gt;&lt;a href=&quot;#网络的分布式控制与管理架构&quot; class=&quot;headerlink&quot; title=&quot;网络的分布式控制与管理架构&quot;&gt;&lt;/a&gt;网络的分布式控制与管理架构&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;运行维护：网络状态的监控与管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;网络的分布式控制与管理架构&quot;&gt;&lt;a href=&quot;#网络的分布式控制与管理架构&quot; class=&quot;headerlink&quot; title=&quot;网络的分布式控制与管理架构&quot;&gt;&lt;/a&gt;网络的分布式控制与管理架构&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;牵一发而动全身，改变十分麻烦&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;什么是软件定义网络&quot;&gt;&lt;a href=&quot;#什么是软件定义网络&quot; class=&quot;headerlink&quot; title=&quot;什么是软件定义网络&quot;&gt;&lt;/a&gt;什么是软件定义网络&lt;/h2&gt;&lt;ul&gt;
@@ -630,36 +662,6 @@
     
       <category term="Init" scheme="https://www.sdyunet.cn/categories/Init/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>initpost</title>
-    <link href="https://www.sdyunet.cn/2019/12/21/%E9%9A%8F%E7%AC%94/"/>
-    <id>https://www.sdyunet.cn/2019/12/21/%E9%9A%8F%E7%AC%94/</id>
-    <published>2019-12-21T09:31:36.000Z</published>
-    <updated>2020-03-19T01:51:56.104Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="随笔写写"><a href="#随笔写写" class="headerlink" title="随笔写写"></a>随笔写写</h1><h2 id="2019年12月27日"><a href="#2019年12月27日" class="headerlink" title="2019年12月27日"></a>2019年12月27日</h2><ul><li>该是复习的时候了，心不静，有事要发生。    </li></ul><h2 id="2019年12月22日"><a href="#2019年12月22日" class="headerlink" title="2019年12月22日"></a>2019年12月22日</h2><ul><li>今天是冬至，中午去北苑吃饺子</li><li>想出去走走</li><li>想回家</li><li>今天是2019年研究生招生考试第二天</li><li>突然感叹以后走了自己那么多账号怎么办,微信和支付宝银行卡里的钱是不是要冲公了</li></ul><h2 id="2019年12月21日"><a href="#2019年12月21日" class="headerlink" title="2019年12月21日"></a>2019年12月21日</h2><ul><li>今天打算去泰安，没去，都忙</li><li>下午去恒大名都吃的把子肉，真香</li><li>又是颓废的一天</li></ul><h2 id="2020年3月19日"><a href="#2020年3月19日" class="headerlink" title="2020年3月19日"></a>2020年3月19日</h2><ul><li>没事干的一天</li><li>疫情影响不知道啥时候结束，想开学（生活费）</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;随笔写写&quot;&gt;&lt;a href=&quot;#随笔写写&quot; class=&quot;headerlink&quot; title=&quot;随笔写写&quot;&gt;&lt;/a&gt;随笔写写&lt;/h1&gt;&lt;h2 id=&quot;2019年12月27日&quot;&gt;&lt;a href=&quot;#2019年12月27日&quot; class=&quot;headerlink&quot; ti
-      
-    
-    </summary>
-    
-    
-      <category term="乱乱写" scheme="https://www.sdyunet.cn/categories/%E4%B9%B1%E4%B9%B1%E5%86%99/"/>
-    
-    
-      <category term="随笔" scheme="https://www.sdyunet.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="日记" scheme="https://www.sdyunet.cn/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="灵感" scheme="https://www.sdyunet.cn/tags/%E7%81%B5%E6%84%9F/"/>
     
   </entry>
   
