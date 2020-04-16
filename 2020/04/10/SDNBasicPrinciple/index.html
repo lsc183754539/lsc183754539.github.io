@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="SDN笔记2——基本原理"><meta name="keywords" content="笔记,SDN,概述"><meta name="author" content="来SC,undefined"><meta name="copyright" content="来SC"><title>SDN笔记2——基本原理【来SC's Blog】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="icon" href="/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+}</script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="来SC's Blog" type="application/atom+xml">
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#软件定义网络的基本架构-ONF定义的三层架构"><span class="toc-number">1.</span> <span class="toc-text">软件定义网络的基本架构-ONF定义的三层架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ONF定义的基于OpenFlow的三层架构"><span class="toc-number">1.1.</span> <span class="toc-text">ONF定义的基于OpenFlow的三层架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#技术特点"><span class="toc-number">1.1.1.</span> <span class="toc-text">技术特点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#技术架构"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">技术架构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优点"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">优点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IETF提出的技术架构"><span class="toc-number">1.2.</span> <span class="toc-text">IETF提出的技术架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#主要思想"><span class="toc-number">1.2.1.</span> <span class="toc-text">主要思想</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#技术架构-1"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">技术架构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优点-1"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">优点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NICRA（被VM收购）提出的Overlay技术架构"><span class="toc-number">1.3.</span> <span class="toc-text">NICRA（被VM收购）提出的Overlay技术架构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#技术特点-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">技术特点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#技术架构-2"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">技术架构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#优点-2"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">优点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ETSI的NFV技术"><span class="toc-number">1.4.</span> <span class="toc-text">ETSI的NFV技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#运营商网络"><span class="toc-number">1.4.1.</span> <span class="toc-text">运营商网络</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#技术架构-3"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">技术架构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不能算是SDN架构"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">不能算是SDN架构</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ONF定义的SDN基本架构"><span class="toc-number">2.</span> <span class="toc-text">ONF定义的SDN基本架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本架构自下而上分为：转发层、控制层、应用层"><span class="toc-number">2.1.</span> <span class="toc-text">基本架构自下而上分为：转发层、控制层、应用层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四个平面"><span class="toc-number">2.2.</span> <span class="toc-text">四个平面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#管理平面"><span class="toc-number">2.2.1.</span> <span class="toc-text">管理平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用平面"><span class="toc-number">2.2.2.</span> <span class="toc-text">应用平面</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#应用逻辑方面"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">应用逻辑方面</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#控制平面"><span class="toc-number">2.2.3.</span> <span class="toc-text">控制平面</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#三个部分"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">三个部分</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#两个任务"><span class="toc-number">2.2.3.2.</span> <span class="toc-text">两个任务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关键技术"><span class="toc-number">2.2.3.3.</span> <span class="toc-text">关键技术</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据平面"><span class="toc-number">2.2.4.</span> <span class="toc-text">数据平面</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#若干网元（NetWork-Element）：包含一个或多个SDN数据路径（SDN-Datapath）"><span class="toc-number">2.2.4.1.</span> <span class="toc-text">若干网元（NetWork Element）：包含一个或多个SDN数据路径（SDN Datapath）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#SDN-datapath："><span class="toc-number">2.2.4.1.1.</span> <span class="toc-text">SDN datapath：</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关键技术-1"><span class="toc-number">2.2.4.2.</span> <span class="toc-text">关键技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两大接口"><span class="toc-number">2.3.</span> <span class="toc-text">两大接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#南向接口"><span class="toc-number">2.3.1.</span> <span class="toc-text">南向接口</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#南向接口的关键技术"><span class="toc-number">2.3.1.1.</span> <span class="toc-text">南向接口的关键技术</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#北向接口"><span class="toc-number">2.3.2.</span> <span class="toc-text">北向接口</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#北向接口的关键技术"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">北向接口的关键技术</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SDN网络核心思想"><span class="toc-number">3.</span> <span class="toc-text">SDN网络核心思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解耦"><span class="toc-number">3.1.</span> <span class="toc-text">解耦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象"><span class="toc-number">3.2.</span> <span class="toc-text">抽象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可编程"><span class="toc-number">3.3.</span> <span class="toc-text">可编程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验一：Mininet的应用实践"><span class="toc-number">4.</span> <span class="toc-text">实验一：Mininet的应用实践</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">来SC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/lsc183754539" target="_blank">GitHub<i class="icon-dot bg-color10"></i></a><a class="links-button button-hover" href="mailto:pasalai@aliyun.com" target="_blank">E-Mail<i class="icon-dot bg-color2"></i></a><a class="links-button button-hover" href="https://weibo.com/laishouchao/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank">微博<i class="icon-dot bg-color10"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">22</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">49</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">10</span></a></div><div class="friend-link"><a class="friend-link-text" href="https://github.com/laishouchao" target="_blank">GitHub of laishouchao</a><a class="friend-link-text" href="https://github.com/lsc183754539" target="_blank">GitHub of lsc183754539</a><a class="friend-link-text" href="http://blog.wanqqq29.cn/" target="_blank">wanqqq29_blog</a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">来SC's Blog</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">SDN笔记2——基本原理</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2020-04-10 | 更新于 2020-04-13</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/categories/SDN/">SDN</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/SDN/">SDN</a><span>&nbsp;|&nbsp;</span><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/tags/%E6%A6%82%E8%BF%B0/">概述</a></div></div></div><div class="main-content"><h2 id="软件定义网络的基本架构-ONF定义的三层架构"><a href="#软件定义网络的基本架构-ONF定义的三层架构" class="headerlink" title="软件定义网络的基本架构-ONF定义的三层架构"></a>软件定义网络的基本架构-ONF定义的三层架构</h2><h3 id="ONF定义的基于OpenFlow的三层架构"><a href="#ONF定义的基于OpenFlow的三层架构" class="headerlink" title="ONF定义的基于OpenFlow的三层架构"></a>ONF定义的基于OpenFlow的三层架构</h3><h4 id="技术特点"><a href="#技术特点" class="headerlink" title="技术特点"></a>技术特点</h4><h5 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h5><ul>
+<li>转发与控制分离</li>
+<li>转发面进行了标准化</li>
+</ul>
+<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul>
+<li>流量调度</li>
+<li>开放生态链<a id="more"></a>
+<h3 id="IETF提出的技术架构"><a href="#IETF提出的技术架构" class="headerlink" title="IETF提出的技术架构"></a>IETF提出的技术架构</h3></li>
+</ul>
+<h4 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h4><h5 id="技术架构-1"><a href="#技术架构-1" class="headerlink" title="技术架构"></a>技术架构</h5><ul>
+<li>开放现有网络设备的能力</li>
+<li>标准化开放的API<!--moe-->
+<h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5></li>
+<li>充分利用了现有的网络设备和路由协议</li>
+<li>快速实现</li>
+</ul>
+<h3 id="NICRA（被VM收购）提出的Overlay技术架构"><a href="#NICRA（被VM收购）提出的Overlay技术架构" class="headerlink" title="NICRA（被VM收购）提出的Overlay技术架构"></a>NICRA（被VM收购）提出的Overlay技术架构</h3><h4 id="技术特点-1"><a href="#技术特点-1" class="headerlink" title="技术特点"></a>技术特点</h4><h5 id="技术架构-2"><a href="#技术架构-2" class="headerlink" title="技术架构"></a>技术架构</h5><ul>
+<li>网络边缘软件化</li>
+<li>Overlay技术</li>
+</ul>
+<h5 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h5><ul>
+<li>与物理网络解耦</li>
+<li>部署非常灵活</li>
+</ul>
+<h3 id="ETSI的NFV技术"><a href="#ETSI的NFV技术" class="headerlink" title="ETSI的NFV技术"></a>ETSI的NFV技术</h3><h4 id="运营商网络"><a href="#运营商网络" class="headerlink" title="运营商网络"></a>运营商网络</h4><h5 id="技术架构-3"><a href="#技术架构-3" class="headerlink" title="技术架构"></a>技术架构</h5><ul>
+<li>NFV与SDN互补</li>
+<li>本质有很大不同</li>
+</ul>
+<h5 id="不能算是SDN架构"><a href="#不能算是SDN架构" class="headerlink" title="不能算是SDN架构"></a>不能算是SDN架构</h5><h2 id="ONF定义的SDN基本架构"><a href="#ONF定义的SDN基本架构" class="headerlink" title="ONF定义的SDN基本架构"></a>ONF定义的SDN基本架构</h2><h3 id="基本架构自下而上分为：转发层、控制层、应用层"><a href="#基本架构自下而上分为：转发层、控制层、应用层" class="headerlink" title="基本架构自下而上分为：转发层、控制层、应用层"></a>基本架构自下而上分为：转发层、控制层、应用层</h3><ul>
+<li>转发层：一种新型网络创新架构，实现了网络设备控制与转发的分离</li>
+<li>控制层：网络虚拟化的一种实现方式，核心技术为OpenFlow</li>
+<li>应用层：实现了网络流量的灵活控制，使网络作为管道变得更加智能。</li>
+</ul>
+<h3 id="四个平面"><a href="#四个平面" class="headerlink" title="四个平面"></a>四个平面</h3><p><img src="https://imgkr.cn-bj.ufileos.com/a3646d64-2ae1-400e-8768-d30b03fd31d6.png" alt="四个平面"></p>
+<h4 id="管理平面"><a href="#管理平面" class="headerlink" title="管理平面"></a>管理平面</h4><ul>
+<li>负责静态的工作：网元初始化配置、指定控制器、定义控制器及应用的控制范围。</li>
+</ul>
+<h4 id="应用平面"><a href="#应用平面" class="headerlink" title="应用平面"></a>应用平面</h4><ul>
+<li>SDN应用逻辑与北向接口（NBI）驱动</li>
+<li>通过北向接口与SDN控制器交互</li>
+</ul>
+<h5 id="应用逻辑方面"><a href="#应用逻辑方面" class="headerlink" title="应用逻辑方面"></a>应用逻辑方面</h5><ul>
+<li>应用交付能力（负载均衡、访问控制、应用加速）</li>
+</ul>
+<h4 id="控制平面"><a href="#控制平面" class="headerlink" title="控制平面"></a>控制平面</h4><h5 id="三个部分"><a href="#三个部分" class="headerlink" title="三个部分"></a>三个部分</h5><ul>
+<li>北向接口（NBI）代理</li>
+<li>SDN控制逻辑（ControlLogic）</li>
+<li>控制数据平面接口驱动（CDPI Driver）</li>
+</ul>
+<h5 id="两个任务"><a href="#两个任务" class="headerlink" title="两个任务"></a>两个任务</h5><ul>
+<li>将SDN应用层请求转换到SDN Datapath</li>
+<li>为SDN应用提供底层网络的抽象模型（状态或事件）</li>
+</ul>
+<h5 id="关键技术"><a href="#关键技术" class="headerlink" title="关键技术"></a>关键技术</h5><ul>
+<li>控制器，网络操作系统（NOS）或网络控制器（开源SDN控制器有NOX、POX、FloodLight、RYU、OpenDayLight、ONOS等）</li>
+</ul>
+<h4 id="数据平面"><a href="#数据平面" class="headerlink" title="数据平面"></a>数据平面</h4><h5 id="若干网元（NetWork-Element）：包含一个或多个SDN数据路径（SDN-Datapath）"><a href="#若干网元（NetWork-Element）：包含一个或多个SDN数据路径（SDN-Datapath）" class="headerlink" title="若干网元（NetWork Element）：包含一个或多个SDN数据路径（SDN Datapath）"></a>若干网元（NetWork Element）：包含一个或多个SDN数据路径（SDN Datapath）</h5><h6 id="SDN-datapath："><a href="#SDN-datapath：" class="headerlink" title="SDN datapath："></a>SDN datapath：</h6><ul>
+<li>逻辑上的网络设备，负责转发和处理数据</li>
+<li>一个SDN Datapath包含控制数据平面接口表和处理功能</li>
+</ul>
+<h5 id="关键技术-1"><a href="#关键技术-1" class="headerlink" title="关键技术"></a>关键技术</h5><ul>
+<li>对数据面进行抽象建模<br><img src="https://imgkr.cn-bj.ufileos.com/bb65dbe4-2607-4519-ad5d-675e64c7b718.png" alt=""></li>
+</ul>
+<h3 id="两大接口"><a href="#两大接口" class="headerlink" title="两大接口"></a>两大接口</h3><h4 id="南向接口"><a href="#南向接口" class="headerlink" title="南向接口"></a>南向接口</h4><ul>
+<li>控制平面和数据平面之间的接口（CDPI）</li>
+<li>功能：转发行为控制、设备性能查询、统计报告、时间通知等</li>
+<li>ONF架构特点：标准化的南向接口协议（OpenFlow），不依赖于底层具体的厂商的交换设备。</li>
+</ul>
+<h5 id="南向接口的关键技术"><a href="#南向接口的关键技术" class="headerlink" title="南向接口的关键技术"></a>南向接口的关键技术</h5><ul>
+<li>转发面开放协议（南向接口协议）：允许控制器控制交换机的配置以及相关转发行为。<img src="https://imgkr.cn-bj.ufileos.com/014b28ea-16e2-4328-9ce6-11e8fd330a59.png" alt=""></li>
+</ul>
+<h4 id="北向接口"><a href="#北向接口" class="headerlink" title="北向接口"></a>北向接口</h4><ul>
+<li>应用平面与控制平面之间的接口（NBI），向应用层提供抽象的网络视图，使应用能直接控制网络的行为。</li>
+<li>开放的、与厂商无关的接口</li>
+</ul>
+<h5 id="北向接口的关键技术"><a href="#北向接口的关键技术" class="headerlink" title="北向接口的关键技术"></a>北向接口的关键技术</h5><ul>
+<li>SDN北向接口设计：控制器将网络能力封装后开放接口，提供上层业务调用。</li>
+<li>REST API成为SDN北向接口的主流设计</li>
+<li>交换机状态采集、静态流表推送、防火墙策略等多种类型的接口。<img src="https://imgkr.cn-bj.ufileos.com/7da0ee38-2a98-4e4f-be2b-7e9cf29bb1c9.png" alt=""></li>
+</ul>
+<h2 id="SDN网络核心思想"><a href="#SDN网络核心思想" class="headerlink" title="SDN网络核心思想"></a>SDN网络核心思想</h2><ul>
+<li>解耦</li>
+<li>抽象</li>
+<li>可编程</li>
+</ul>
+<h3 id="解耦"><a href="#解耦" class="headerlink" title="解耦"></a>解耦</h3><ul>
+<li>将控制平面和数据平面分离：解决两层在物理上紧耦合导致的问题</li>
+<li>解耦后，控制平面负责上层的控制决策，数据平面负责数据的交换转发，双方需遵行开放接口进行通信</li>
+<li>传统网络<img src="https://imgkr.cn-bj.ufileos.com/fbcbcd82-b612-468a-8b71-a4206202d97d.png" alt="传统网络"></li>
+<li>SDN网络<img src="https://imgkr.cn-bj.ufileos.com/4ca592e8-9807-449f-8662-71aafeb0ddd7.png" alt="SDN网络"></li>
+<li>解耦合带来的问题  <ul>
+<li>控制平面的服务能力成为网络性能的瓶颈</li>
+<li>多控制器如何交互路由信息，保持分布式节点状态的一致性</li>
+<li>控制平面的响应延迟。导致的数据平面可用性问题</li>
+</ul>
+</li>
+</ul>
+<h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><p><img src="https://imgkr.cn-bj.ufileos.com/cacd7127-5dab-4478-a19a-6dcd223dc244.png" alt=""></p>
+<ul>
+<li>转发抽象<img src="https://imgkr.cn-bj.ufileos.com/e382c7c0-835e-434d-b17d-b81be4caf654.png" alt="转发抽象"></li>
+<li>分布状态抽象<img src="https://imgkr.cn-bj.ufileos.com/211647c9-a1c3-42bb-b3ed-adadc5c7ccf5.png" alt="分布状态抽象"></li>
+<li>配置抽象：网络行为的表达通过编程语言实现，基于简化抽象模型，将抽象配置映射为物理配置（命令行、网关协议接口、控制器提供的API）</li>
+<li>Overlay架构上的抽象<img src="https://imgkr.cn-bj.ufileos.com/fdaeedcd-6e65-4fae-b04a-13e07ef29c01.png" alt="Overlay架构上的抽象"></li>
+</ul>
+<h3 id="可编程"><a href="#可编程" class="headerlink" title="可编程"></a>可编程</h3><ul>
+<li>SDN在数据平面与控制平面解耦后提供了开放的可编程接口</li>
+<li>传统网络管理接口：命令行、网管协议、脚本语言等初级管理方式</li>
+<li>网络管理员需要基于整个网络的更高级的编程方式</li>
+<li>网络可编程：主动网络（开放网络节点的编程接口、用户数据上根据用户需求执行相应计算）、4D架构（数据平面、发现平面、扩展平面、决策平面）</li>
+<li>SDN的可编程接口<img src="https://imgkr.cn-bj.ufileos.com/53c8995d-3813-4a18-b3a5-68d89643455a.png" alt="SDN的可编程接口"></li>
+<li>SDN的数据平面也支持可编程（Intel高性能网络数据处理框架DPDK、斯坦福大学 数据平面可编程语言P4）</li>
+</ul>
+<h2 id="实验一：Mininet的应用实践"><a href="#实验一：Mininet的应用实践" class="headerlink" title="实验一：Mininet的应用实践"></a>实验一：Mininet的应用实践</h2></div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">来SC</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="https://www.sdyunet.cn/2020/04/10/SDNBasicPrinciple/">https://www.sdyunet.cn/2020/04/10/SDNBasicPrinciple/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.sdyunet.cn">来SC's Blog</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/04/16/GoolgeHacker/"><i class="fas fa-angle-left">&nbsp;</i><span>GoolgeHacker</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/2020/04/09/SDN-Summary/"><span>SDN笔记1——概述</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2019 ～ 2020 By 来SC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
