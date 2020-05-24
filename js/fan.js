@@ -6,7 +6,7 @@
     window.onresize = (e) => {
         let width = e.currentTarget.innerWidth;
         let open = $('#side-button').hasClass('close');
-        if (width <= 600) {
+        if (width <= 900) {
             document.documentElement.style.fontSize = width / 7.5 + 'px';
             //设置body字体大小，不影响body内字体大小
             document.body.style.fontSize = '12px';
@@ -15,8 +15,8 @@
 
             $('#side-button').hide();
             if (open) {
-                $('#sidebar').velocity('stop').velocity({left: '-300px'}, 800, 'spring');
-                $('#main-container').velocity('stop').velocity({marginLeft: '0px'}, 800, 'spring');
+                $('#sidebar').velocity('stop').velocity({left: '0px'}, 800, 'spring');
+                $('#main-container').velocity('stop').velocity({marginLeft: '300px'}, 800, 'spring');
             }
         } else {
             document.documentElement.style.fontSize = '12px';
@@ -27,8 +27,8 @@
 
             $('#side-button').show();
             if (open) {
-                $('#sidebar').velocity('stop').velocity({left: '0px'}, 800, 'spring');
-                $('#main-container').velocity('stop').velocity({marginLeft: '300px'}, 800, 'spring');
+                $('#sidebar').velocity('stop').velocity({left: '-300px'}, 800, 'spring');
+                $('#main-container').velocity('stop').velocity({marginLeft: '0px'}, 800, 'spring');
             }
         }
     };
