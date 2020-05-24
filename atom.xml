@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sdyunet.cn/"/>
-  <updated>2020-05-24T01:51:05.577Z</updated>
+  <updated>2020-05-24T01:52:16.897Z</updated>
   <id>https://www.sdyunet.cn/</id>
   
   <author>
@@ -21,20 +21,16 @@
     <link href="https://www.sdyunet.cn/2020/05/24/PhpFilesUpload/"/>
     <id>https://www.sdyunet.cn/2020/05/24/PhpFilesUpload/</id>
     <published>2020-05-24T00:50:58.000Z</published>
-    <updated>2020-05-24T01:51:05.577Z</updated>
+    <updated>2020-05-24T01:52:16.897Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><ul><li>burpsuite</li><li>浏览器</li><li>php webshell file</li></ul><h2 id="编写php文件，作为漏洞测试使用"><a href="#编写php文件，作为漏洞测试使用" class="headerlink" title="编写php文件，作为漏洞测试使用"></a>编写php文件，作为漏洞测试使用</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">eval</span>(@_post[pp]); <span class="meta">?&gt;</span></span><br><span class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h1 id="复现"><a href="#复现" class="headerlink" title="复现"></a>复现</h1><ul><li>使用burpsuite监听拦截8080端口</li><li>浏览器代理设置为localhost:8080</li><li>尝试在页面上传webshell文件</li><li>回到burpsuite ，将上传的数据包右击&gt;发送到重放  <img src="https://imgkr.cn-bj.ufileos.com/d96c09d4-730d-4551-b190-11d0361df887.png" alt=""></li><li>将文件名更改为filesname.php .jpg（有个空格，方便寻找其他也可）  <img src="https://imgkr.cn-bj.ufileos.com/5e1ee433-4610-47c5-9127-187087a53392.png" alt=""></li><li>切换到hex选项卡，找到空格（或是你的符号）的十六进制，更改为00  <img src="https://imgkr.cn-bj.ufileos.com/1212734e-d050-4371-aa15-c027b7f15f66.png" alt=""></li><li>将流量重放，查看返回结果，并利用解析漏洞尝试连接  <img src="https://imgkr.cn-bj.ufileos.com/026830b5-407e-407a-99a6-16a2648f7a2d.png" alt="">  <img src="https://imgkr.cn-bj.ufileos.com/5db3a841-2d2c-42fb-b576-4043cfac4324.png" alt=""></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="准备工具"><a href="#准备工具" class="headerlink" title="准备工具"></a>准备工具</h2><ul><li>burpsuite</li><li>浏览器</li><li>php webshell file<a id="more"></a><h2 id="编写php文件，作为漏洞测试使用"><a href="#编写php文件，作为漏洞测试使用" class="headerlink" title="编写php文件，作为漏洞测试使用"></a>编写php文件，作为漏洞测试使用</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">eval</span>(@_post[pp]); <span class="meta">?&gt;</span></span><br><span class="line"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h1 id="复现"><a href="#复现" class="headerlink" title="复现"></a>复现</h1></li><li>使用burpsuite监听拦截8080端口</li><li>浏览器代理设置为localhost:8080</li><li>尝试在页面上传webshell文件</li><li>回到burpsuite ，将上传的数据包右击&gt;发送到重放  <img src="https://imgkr.cn-bj.ufileos.com/d96c09d4-730d-4551-b190-11d0361df887.png" alt=""></li><li>将文件名更改为filesname.php .jpg（有个空格，方便寻找其他也可）  <img src="https://imgkr.cn-bj.ufileos.com/5e1ee433-4610-47c5-9127-187087a53392.png" alt=""></li><li>切换到hex选项卡，找到空格（或是你的符号）的十六进制，更改为00  <img src="https://imgkr.cn-bj.ufileos.com/1212734e-d050-4371-aa15-c027b7f15f66.png" alt=""></li><li>将流量重放，查看返回结果，并利用解析漏洞尝试连接  <img src="https://imgkr.cn-bj.ufileos.com/026830b5-407e-407a-99a6-16a2648f7a2d.png" alt="">  <img src="https://imgkr.cn-bj.ufileos.com/5db3a841-2d2c-42fb-b576-4043cfac4324.png" alt=""></li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;准备工具&quot;&gt;&lt;a href=&quot;#准备工具&quot; class=&quot;headerlink&quot; title=&quot;准备工具&quot;&gt;&lt;/a&gt;准备工具&lt;/h2&gt;&lt;ul&gt;
+      &lt;h2 id=&quot;准备工具&quot;&gt;&lt;a href=&quot;#准备工具&quot; class=&quot;headerlink&quot; title=&quot;准备工具&quot;&gt;&lt;/a&gt;准备工具&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;burpsuite&lt;/li&gt;
 &lt;li&gt;浏览器&lt;/li&gt;
-&lt;li&gt;php webshell file&lt;/li&gt;
-&lt;
-      
+&lt;li&gt;php webshell file
     
     </summary>
     
