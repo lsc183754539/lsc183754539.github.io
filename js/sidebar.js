@@ -7,12 +7,12 @@
         let open = $('#side-button').hasClass('close');
         if (open) {
             $('#side-button').removeClass('close');
-            $('#sidebar').velocity('stop').velocity({left: '0px'}, 800, 'spring');
-            $('#main-container').velocity('stop').velocity({marginLeft: '300px'}, 800, 'spring');
-        } else {
-            $('#side-button').addClass('close');
             $('#sidebar').velocity('stop').velocity({left: '-300px'}, 800, 'spring');
             $('#main-container').velocity('stop').velocity({marginLeft: '0px'}, 800, 'spring');
+        } else {
+            $('#side-button').addClass('close');
+            $('#sidebar').velocity('stop').velocity({left: '0px'}, 800, 'spring');
+            $('#main-container').velocity('stop').velocity({marginLeft: '300px'}, 800, 'spring');
         }
     });
 

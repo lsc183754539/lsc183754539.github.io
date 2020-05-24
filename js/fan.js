@@ -6,7 +6,7 @@
     window.onresize = (e) => {
         let width = e.currentTarget.innerWidth;
         let open = $('#side-button').hasClass('close');
-        if (width <= 900) {
+        if (width <= 600) {
             document.documentElement.style.fontSize = width / 7.5 + 'px';
             //设置body字体大小，不影响body内字体大小
             document.body.style.fontSize = '12px';
