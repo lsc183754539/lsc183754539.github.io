@@ -4,13 +4,13 @@
      * @let open true -展开状态; false -收缩状态
      */
     $('#side-button').on('click', function () {
-        let open = $('#side-button').hasClass('close');
+        let open = $('#side-button').hasClass('open');
         if (open) {
-            $('#side-button').removeClass('close');
+            $('#side-button').removeClass('open');
             $('#sidebar').velocity('stop').velocity({left: '-300px'}, 800, 'spring');
             $('#main-container').velocity('stop').velocity({marginLeft: '0px'}, 800, 'spring');
         } else {
-            $('#side-button').addClass('close');
+            $('#side-button').addClass('open');
             $('#sidebar').velocity('stop').velocity({left: '0px'}, 800, 'spring');
             $('#main-container').velocity('stop').velocity({marginLeft: '300px'}, 800, 'spring');
         }
